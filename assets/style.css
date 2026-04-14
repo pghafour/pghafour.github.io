@@ -1,166 +1,139 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
 }
 
-/* ===== Header ===== */
+/* ===== HEADER ===== */
 
-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-    border-bottom: 2px solid #ddd;
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:white;
+    border-bottom:2px solid #dcdcdc;
 }
 
-.header-left h3 {
-    margin: 0;
-    font-size: 20px;
+.header-left h3{
+    margin:0;
+    font-size:20px;
 }
 
-.header-left p {
-    margin: 2px 0;
-    font-size: 14px;
+.header-left p{
+    margin:2px 0;
+    font-size:14px;
 }
 
-.header-center h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 28px;
+.header-center{
+    text-align:center;
 }
 
-.header-right img {
-    height: 60px;
-    margin-left: 15px;
+.header-center h1{
+    margin:0;
+    font-size:28px;
 }
 
-/* ===== Main Layout ===== */
-
-.main-container {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    min-height: calc(100vh - 120px);
+.header-right img{
+    height:55px;
+    margin-left:12px;
 }
 
-/* Left Sidebar = 20% */
-.sidebar-left {
-    width: 20%;
-    min-width: 200px;
-    padding: 20px;
-    background-color: #fafafa;
-    border-right: 1px solid #ddd;
-    box-sizing: border-box;
+/* ===== MAIN LAYOUT ===== */
+
+.main-container{
+    display:flex;
+    max-width:1400px;
+    margin:auto;
 }
 
-/* Main Content = 60% */
-.content {
-    width: 60%;
-    padding: 20px;
-    box-sizing: border-box;
+/* LEFT SIDEBAR */
+
+.sidebar-left{
+    width:20%;
+    background:#fafafa;
+    border-right:1px solid #e0e0e0;
+    padding:25px;
+    box-sizing:border-box;
 }
 
-/* Right Sidebar = 20% */
-.sidebar-right {
-    width: 20%;
-    min-width: 200px;
-    padding: 20px;
-    background-color: #fafafa;
-    border-left: 1px solid #ddd;
-    box-sizing: border-box;
+.sidebar-left h3{
+    margin-top:0;
 }
 
-/* ===== Sidebar Left Style ===== */
-
-.sidebar-left h3 {
-    margin-top: 0;
+.sidebar-left ul{
+    list-style:none;
+    padding:0;
 }
 
-.sidebar-left ul {
-    list-style-type: none;
-    padding: 0;
+.sidebar-left li{
+    margin:10px 0;
 }
 
-.sidebar-left ul li {
-    margin: 10px 0;
+.sidebar-left a{
+    text-decoration:none;
+    color:#222;
 }
 
-.sidebar-left a {
-    text-decoration: none;
-    color: black;
+.sidebar-left a:hover{
+    color:#0056b3;
 }
 
-.sidebar-left a:hover {
-    text-decoration: underline;
+/* MAIN CONTENT */
+
+.content{
+    width:60%;
+    background:white;
+    padding:30px;
+    box-sizing:border-box;
 }
 
-/* ===== Right Sidebar ===== */
-
-.sidebar-right h3 {
-    margin-top: 0;
+.content h2{
+    margin-top:0;
 }
 
-.sidebar-right img {
-    width: 100%;
-    border-radius: 4px;
+/* RIGHT SIDEBAR */
+
+.sidebar-right{
+    width:20%;
+    background:#fafafa;
+    border-left:1px solid #e0e0e0;
+    padding:25px;
+    box-sizing:border-box;
 }
 
-.useful-item {
-    margin-bottom: 20px;
+/* USEFUL LINKS BLOCK */
+
+.useful-item{
+    width:100%;
+    margin-bottom:25px;
 }
 
-/* ===== Content Titles ===== */
-
-.content h2 {
-    margin-top: 0;
+.useful-item img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
-hr {
-    border: none;
-    height: 1px;
-    background-color: #ccc;
-    margin-bottom: 20px;
+.useful-item p{
+    margin-top:8px;
+    font-size:14px;
+    line-height:1.4;
 }
 
-/* Make sidebar content follow column width */
-
-.sidebar-left,
-.sidebar-right,
-.content {
-    overflow-wrap: break-word;
+.sidebar-right a{
+    color:#0056b3;
+    text-decoration:none;
 }
 
-/* Force images to stay inside their columns */
-
-.sidebar-right img,
-.content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.sidebar-right a:hover{
+    text-decoration:underline;
 }
 
-/* Useful link block */
+/* GENERAL */
 
-.useful-item {
-    width: 100%;
-}
-
-.useful-item p {
-    width: 100%;
-    font-size: 14px;
-    margin-top: 8px;
-}
-
-/* Ensure lists do not overflow */
-
-.sidebar-left ul {
-    width: 100%;
-}
-
-.sidebar-left li {
-    width: 100%;
+hr{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:15px 0 25px 0;
 }
