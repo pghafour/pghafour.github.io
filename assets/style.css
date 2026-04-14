@@ -149,3 +149,40 @@ header h1 {
     font-size: 14px;
     margin-top: 5px;
 }
+
+/* -----------------------------------------
+   RECENT PUBLICATIONS STYLE
+------------------------------------------ */
+
+.publication {
+    margin-bottom: 25px;
+}
+
+.publication-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0b4725;
+}
+
+.publication-authors,
+.publication-journal {
+    font-size: 15px;
+    color: #333;
+    margin: 3px 0;
+}
+
+.publication-abstract {
+    font-size: 14px;
+    font-family: "Georgia", serif;
+    color: #444;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* Bullet style */
+.publication-bullet {
+    font-size: 22px;
+    vertical-align: top;
+    margin-right: 7px;
+    color: #0b4725;
+}
