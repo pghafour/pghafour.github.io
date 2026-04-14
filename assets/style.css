@@ -125,3 +125,42 @@ hr {
     background-color: #ccc;
     margin-bottom: 20px;
 }
+
+/* Make sidebar content follow column width */
+
+.sidebar-left,
+.sidebar-right,
+.content {
+    overflow-wrap: break-word;
+}
+
+/* Force images to stay inside their columns */
+
+.sidebar-right img,
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Useful link block */
+
+.useful-item {
+    width: 100%;
+}
+
+.useful-item p {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Ensure lists do not overflow */
+
+.sidebar-left ul {
+    width: 100%;
+}
+
+.sidebar-left li {
+    width: 100%;
+}
