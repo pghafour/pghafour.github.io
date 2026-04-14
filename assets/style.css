@@ -5,12 +5,13 @@
 body {
     margin: 0;
     padding: 0;
-    background: #f4f4f4;            /* light gray background */
+    background: #f4f4f4;
     font-family: Arial, sans-serif;
     color: #222;
 }
 
 /* Main container with 3 columns */
+
 .main-container {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -25,7 +26,7 @@ body {
 --------------------------- */
 
 header {
-    background: #0b4725;            /* elegant dark green */
+    background: #0b4725;
     color: white;
     padding: 20px;
     text-align: center;
@@ -34,7 +35,7 @@ header {
 
 header h1 {
     margin: 5px 0;
-    font-family: Georgia, serif;    /* elegant serif title */
+    font-family: Georgia, serif;
     font-size: 32px;
 }
 
@@ -79,7 +80,7 @@ header h1 {
 }
 
 .sidebar-left a {
-    color: #0b4725;                 /* matching green */
+    color: #0b4725;
     text-decoration: none;
     font-weight: bold;
 }
@@ -88,9 +89,11 @@ header h1 {
     text-decoration: underline;
 }
 
-/* active page */
-.sidebar-left b {
-    color: #06301a;
+/* ACTIVE PAGE IN MENU */
+
+.sidebar-left a.active-page {
+    color: #800000;
+    font-weight: bold;
 }
 
 /* --------------------------
@@ -105,7 +108,6 @@ header h1 {
 
 .content h2 {
     font-family: Georgia, serif;
-    color: #0b4725;
     margin-top: 0;
 }
 
@@ -113,8 +115,14 @@ header h1 {
     color: #06301a;
 }
 
+/* PAGE TITLE COLOR */
+
+.content h2.page-title {
+    color: #800000;
+}
+
 /* --------------------------
-   RIGHT SIDEBAR (Useful Links)
+   RIGHT SIDEBAR
 --------------------------- */
 
 .sidebar-right {
@@ -140,19 +148,4 @@ header h1 {
 .useful-item p {
     font-size: 14px;
     margin-top: 5px;
-}
-
-/* -----------------------------------
-   ACTIVE PAGE HIGHLIGHT (maroon)
------------------------------------- */
-
-.active-page {
-    font-weight: bold;
-    color: #800000;      /* maroon */
-}
-
-/* Page title color */
-.page-title {
-    color: #800000;      /* maroon */
-    font-family: Georgia, serif;
 }
