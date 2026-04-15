@@ -13,60 +13,55 @@
 <!-- HEADER -->
 <div w3-include-html="assets/includes/header.html"></div>
 
-<div class="container">
+<!-- MAIN 3‑COLUMN LAYOUT -->
+<div class="main-container">
 
     <!-- LEFT SIDEBAR -->
-    <div class="column-left" w3-include-html="assets/includes/sidebar-left.html"></div>
+    <div class="sidebar-left">
+        <div w3-include-html="assets/includes/sidebar-left.html"></div>
+    </div>
 
     <!-- MAIN CONTENT -->
-    <div class="column-center">
+    <div class="content">
 
-        <h1 class="page-title">Publications</h1>
+        <h2 class="page-title">Publications</h2>
         <hr>
 
-        <!-- ========================= -->
-        <!-- ===== JOURNAL PAPERS ==== -->
-        <!-- ========================= -->
-        <h2>Journal Papers</h2>
+        <h3>Journal Papers</h3>
 
-        <!-- ===== PAPER 1 ===== -->
-        <div class="pub-entry">
-            <span class="pub-bullet">•</span>
-            <span class="pub-title">The Filament Rift: ΛCDM’s Structural Challenge against Observation</span>
-
-            <div class="pub-authors">S Tavasoli, P Ghafour</div>
-            <div class="pub-journal">The Astrophysical Journal 994 (2), 219</div>
+        <!-- PAPER 1 -->
+        <div class="publication">
+            <span class="publication-bullet">•</span>
+            <span class="publication-title">The Filament Rift: ΛCDM’s Structural Challenge against Observation</span>
+            <div class="publication-authors">S Tavasoli, P Ghafour</div>
+            <div class="publication-journal">The Astrophysical Journal 994 (2), 219</div>
 
             <div class="abstract-toggle">Show Abstract ▼</div>
-
             <div class="abstract-content">
                 <div class="pub-abstract">
                     <b>Abstract:</b><br>
-                    This study presents the first extended comparison of cosmic filaments identified in SDSS DR10 observations...
+                    This study presents the first extended comparison...
                 </div>
             </div>
 
             <div class="pub-links">
                 <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae18d6" target="_blank">Journal</a>
                 <a href="https://www.researchgate.net/publication/398042870_The_Filament_Rift_LCDM's_Structural_Challenge_against_Observation" target="_blank">ResearchGate</a>
-                <a href="#" target="_blank">Google Scholar</a>
             </div>
         </div>
 
-        <!-- ===== PAPER 2 ===== -->
-        <div class="pub-entry">
-            <span class="pub-bullet">•</span>
-            <span class="pub-title">GrAviPaSt’s Lens to the Past: Unveiling the Evolution of Filamentary Structures</span>
-
-            <div class="pub-authors">P Ghafour, S Tavasoli</div>
-            <div class="pub-journal">The Astrophysical Journal 990 (2), 119</div>
+        <!-- PAPER 2 -->
+        <div class="publication">
+            <span class="publication-bullet">•</span>
+            <span class="publication-title">GrAviPaSt’s Lens to the Past: Unveiling the Evolution of Filamentary Structures</span>
+            <div class="publication-authors">P Ghafour, S Tavasoli</div>
+            <div class="publication-journal">The Astrophysical Journal 990 (2), 119</div>
 
             <div class="abstract-toggle">Show Abstract ▼</div>
-
             <div class="abstract-content">
                 <div class="pub-abstract">
                     <b>Abstract:</b><br>
-                    This paper examines the evolution of cosmic filaments across redshifts 1, 0.5, 0 using IllustrisTNG100-1...
+                    This paper examines the evolution...
                 </div>
             </div>
 
@@ -76,20 +71,18 @@
             </div>
         </div>
 
-        <!-- ===== PAPER 3 ===== -->
-        <div class="pub-entry">
-            <span class="pub-bullet">•</span>
-            <span class="pub-title">VEGA: Voids idEntification using Genetic Algorithm</span>
-
-            <div class="pub-authors">P Ghafour, S Tavasoli, MR Shojaei</div>
-            <div class="pub-journal">JCAP 2025 (12), 001</div>
+        <!-- PAPER 3 -->
+        <div class="publication">
+            <span class="publication-bullet">•</span>
+            <span class="publication-title">VEGA: Voids idEntification using Genetic Algorithm</span>
+            <div class="publication-authors">P Ghafour, S Tavasoli, MR Shojaei</div>
+            <div class="publication-journal">JCAP 2025 (12), 001</div>
 
             <div class="abstract-toggle">Show Abstract ▼</div>
-
             <div class="abstract-content">
                 <div class="pub-abstract">
                     <b>Abstract:</b><br>
-                    Cosmic voids are large, nearly empty regions that lie between the web of galaxies...
+                    Cosmic voids are large...
                 </div>
             </div>
 
@@ -98,16 +91,22 @@
                 <a href="https://www.researchgate.net/publication/398197327_VEGA_Voids_idEntification_using_Genetic_Algorithm" target="_blank">ResearchGate</a>
             </div>
         </div>
+
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="column-right" w3-include-html="assets/includes/sidebar-right.html"></div>
+    <div class="sidebar-right">
+        <div w3-include-html="assets/includes/sidebar-right.html"></div>
+    </div>
 
 </div>
 
 <!-- LOAD INCLUDES -->
 <script>
-    w3.includeHTML();
+w3.includeHTML(function () {
+    const link = document.querySelector('a[href="publications.html"]');
+    if (link) { link.classList.add("active-page"); }
+});
 </script>
 
 <!-- COLLAPSIBLE ABSTRACT SCRIPT -->
@@ -124,13 +123,6 @@ document.addEventListener("click", function(e) {
             e.target.innerHTML = "Hide Abstract ▲";
         }
     }
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const item = document.querySelector('a[href="publications.html"]');
-    if (item) item.classList.add("active-page");
 });
 </script>
 
