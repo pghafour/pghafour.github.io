@@ -75,8 +75,17 @@
 <!-- INCLUDE LOADING + ACTIVE PAGE HIGHLIGHT -->
 <script>
 w3.includeHTML(function () {
-    const link = document.querySelector('a[href="index.html"]');
-    if (link) { link.classList.add("active-page"); }
+    // detect current filename or root "/"
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const menuLinks = document.querySelectorAll(".sidebar-left a");
+    menuLinks.forEach(link => {
+        link.classList.remove("active-page"); // clear old highlights
+        const href = link.getAttribute("href");
+        // treat root "/" as index.html
+        if (href.endsWith(currentPage) || (currentPage === "index.html" && href === "./")) {
+            link.classList.add("active-page");
+        }
+    });
 });
 </script>
 
