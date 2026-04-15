@@ -127,5 +127,12 @@ document.addEventListener("click", function(e) {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const item = document.querySelector('a[href="publications.html"]');
+    if (item) item.classList.add("active-page");
+});
+</script>
+
 </body>
 </html>
