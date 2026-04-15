@@ -80,5 +80,12 @@
 w3.includeHTML();
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const item = document.querySelector('a[href="index.html"]');
+    if (item) item.classList.add("active-page");
+});
+</script>
+
 </body>
 </html>
