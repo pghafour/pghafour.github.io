@@ -7,57 +7,52 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/style.css" />
-
-    <!-- Highlight Active Page -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const current = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll(".menu-item a");
-
-            links.forEach(link => {
-                link.classList.remove("active");
-
-                const linkPage = link.getAttribute("href");
-                if (linkPage === current) {
-                    link.classList.add("active");
-                }
-            });
-
-            if (current === "" || current === "index.html") {
-                document.querySelector('.menu-item a[href="index.html"]').classList.add("active");
-            }
-        });
-    </script>
-
 </head>
 
 <body>
 
     <!-- Header -->
-    <div id="header-placeholder">
-        <script>
-            fetch("assets/includes/header.html")
-                .then(res => res.text())
-                .then(data => (document.getElementById("header-placeholder").innerHTML = data));
-        </script>
-    </div>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("assets/includes/header.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("header-placeholder").innerHTML = data);
+    </script>
 
-    <div class="container">
+    <!-- 3‑COLUMN LAYOUT -->
+    <div class="main-container">
 
-        <!-- Left Sidebar -->
-        <aside class="sidebar sidebar-left">
-            <div id="left-sidebar-placeholder">
-                <script>
-                    fetch("assets/includes/sidebar-left.html")
-                        .then(res => res.text())
-                        .then(data => (document.getElementById("left-sidebar-placeholder").innerHTML = data));
-                </script>
-            </div>
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <div id="left-sidebar-placeholder"></div>
+
+            <script>
+                fetch("assets/includes/sidebar-left.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.getElementById("left-sidebar-placeholder").innerHTML = data;
+
+                        const current = window.location.pathname.split("/").pop();
+                        const links = document.querySelectorAll(".menu-item a");
+
+                        links.forEach(link => {
+                            const page = link.getAttribute("href");
+                            link.classList.remove("active-page");
+                            if (page === current) {
+                                link.classList.add("active-page");
+                            }
+                        });
+
+                        if (current === "" || current === "index.html") {
+                            document.querySelector('.menu-item a[href="index.html"]').classList.add("active-page");
+                        }
+                    });
+            </script>
         </aside>
 
-        <!-- Main Content -->
+        <!-- MAIN CONTENT -->
         <main class="content">
-            <h1>Talks and Seminars</h1>
+            <h2 class="page-title">Talks and Seminars</h2>
 
             <ul style="list-style-type: disc; padding-left: 20px;">
 
@@ -77,7 +72,7 @@
                     </span>
                 </li><br>
 
-                <!-- 2024 (two duplicates as requested) -->
+                <!-- 2024 (two duplicates, as provided) -->
                 <li>
                     <strong style="color: maroon;">An investigation into the integrated emission spectra properties of galaxies along the Hubble sequence</strong><br>
                     <span style="font-size: 0.9em; color: #444;">
@@ -115,18 +110,17 @@
                 </li><br>
 
             </ul>
-
         </main>
 
-        <!-- Right Sidebar -->
-        <aside class="sidebar sidebar-right">
-            <div id="right-sidebar-placeholder">
-                <script>
-                    fetch("assets/includes/sidebar-right.html")
-                        .then(res => res.text())
-                        .then(data => (document.getElementById("right-sidebar-placeholder").innerHTML = data));
-                </script>
-            </div>
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <div id="right-sidebar-placeholder"></div>
+
+            <script>
+                fetch("assets/includes/sidebar-right.html")
+                    .then(res => res.text())
+                    .then(data => document.getElementById("right-sidebar-placeholder").innerHTML = data);
+            </script>
         </aside>
 
     </div>
