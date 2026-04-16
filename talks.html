@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talks & Presentations | P.Ghafour</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- Highlight Active Page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const current = window.location.pathname.split("/").pop();
+            const links = document.querySelectorAll(".menu-item a");
+
+            links.forEach(link => {
+                link.classList.remove("active");
+
+                const linkPage = link.getAttribute("href");
+                if (linkPage === current) {
+                    link.classList.add("active");
+                }
+            });
+
+            if (current === "" || current === "index.html") {
+                document.querySelector('.menu-item a[href="index.html"]').classList.add("active");
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder">
+        <script>
+            fetch("assets/includes/header.html")
+                .then(res => res.text())
+                .then(data => (document.getElementById("header-placeholder").innerHTML = data));
+        </script>
+    </div>
+
+    <div class="container">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar sidebar-left">
+            <div id="left-sidebar-placeholder">
+                <script>
+                    fetch("assets/includes/sidebar-left.html")
+                        .then(res => res.text())
+                        .then(data => (document.getElementById("left-sidebar-placeholder").innerHTML = data));
+                </script>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>Talks and Seminars</h1>
+
+            <ul style="list-style-type: disc; padding-left: 20px;">
+
+                <!-- 2026 -->
+                <li>
+                    <strong style="color: maroon;">An Introduction to 21 cm Cosmology</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        January 11th, 2026, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <!-- 2025 -->
+                <li>
+                    <strong style="color: maroon;">Unveiling the Evolution of Filamentary Structures</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        May 18th, 2025, Sharif University of Technology, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <!-- 2024 (two duplicates as requested) -->
+                <li>
+                    <strong style="color: maroon;">An investigation into the integrated emission spectra properties of galaxies along the Hubble sequence</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        December 8th, 2024, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <li>
+                    <strong style="color: maroon;">An investigation into the integrated emission spectra properties of galaxies along the Hubble sequence</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        December 8th, 2024, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <!-- 2023 -->
+                <li>
+                    <strong style="color: maroon;">An introduction to the base concepts of supervised machine learning</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        December 17th, 2023, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <li>
+                    <strong style="color: maroon;">An overview of: A theoretical view on the T-web statistical description of the cosmic web</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        December 3rd, 2023, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+                <li>
+                    <strong style="color: maroon;">An overview of: A model independent calibration of quasars</strong><br>
+                    <span style="font-size: 0.9em; color: #444;">
+                        October 22nd, 2023, Kharazmi University, Tehran, Iran
+                    </span>
+                </li><br>
+
+            </ul>
+
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar sidebar-right">
+            <div id="right-sidebar-placeholder">
+                <script>
+                    fetch("assets/includes/sidebar-right.html")
+                        .then(res => res.text())
+                        .then(data => (document.getElementById("right-sidebar-placeholder").innerHTML = data));
+                </script>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
