@@ -1,74 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Honors and Awards</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honors and Awards | P.Ghafour</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("assets/includes/header.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("header-placeholder").innerHTML = data);
+    </script>
 
-    <!-- Left Column (Navigation - same as other pages) -->
-    <div class="left-column">
-        <h2>Your Name</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="awards.html" class="active">Awards</a></li>
-                <li><a href="cv.html">CV</a></li>
+    <!-- 3‑COLUMN LAYOUT -->
+    <div class="main-container">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <div id="left-sidebar-placeholder"></div>
+
+            <script>
+                fetch("assets/includes/sidebar-left.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.getElementById("left-sidebar-placeholder").innerHTML = data;
+
+                        const current = window.location.pathname.split("/").pop();
+                        const links = document.querySelectorAll(".menu-item a");
+
+                        links.forEach(link => {
+                            const page = link.getAttribute("href");
+                            link.classList.remove("active-page");
+                            if (page === current) {
+                                link.classList.add("active-page");
+                            }
+                        });
+
+                        if (current === "" || current === "index.html") {
+                            document.querySelector('.menu-item a[href="index.html"]').classList.add("active-page");
+                        }
+                    });
+            </script>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+            <h2 class="page-title">Honors and Awards</h2>
+
+            <ul style="list-style-type: disc; padding-left: 20px; font-size: 1em;">
+
+                <!-- Award 1 -->
+                <li>
+                    <strong style="color: maroon;">Best Poster Presentation</strong><br>
+                    <span style="font-size: 0.95em; color: #333;">
+                        7th Iranian Computational Physics Conference, PSI
+                    </span>
+                </li>
+
+                <!-- Award 2 -->
+                <li>
+                    <strong style="color: maroon;">Top‑Ranked M.Sc. Entrance – Gravity and Cosmology</strong><br>
+                    <span style="font-size: 0.95em; color: #333;">
+                        Kharazmi University, Tehran, Iran
+                    </span>
+                </li>
+
+                <!-- Award 3 -->
+                <li>
+                    <strong style="color: maroon;">Top‑Ranked M.Sc. Entrance – Astronomy and Astrophysics</strong><br>
+                    <span style="font-size: 0.95em; color: #333;">
+                        Kharazmi University, Tehran, Iran
+                    </span>
+                </li>
+
             </ul>
-        </nav>
-    </div>
+        </main>
 
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <div id="right-sidebar-placeholder"></div>
 
-    <!-- Middle Column (Main Content) -->
-    <div class="middle-column">
-
-        <h1>Honors and Awards</h1>
-
-        <ul class="awards-list">
-
-            <li>
-                <span class="award-title">Best Poster Presentation</span>
-                <div class="award-subtitle">
-                    7th Iranian Computational Physics Conference, PSI
-                </div>
-            </li>
-
-            <li>
-                <span class="award-title">
-                Top‑Ranked M.Sc. Entrance – Gravity and Cosmology
-                </span>
-                <div class="award-subtitle">
-                    Kharazmi University, Tehran, Iran
-                </div>
-            </li>
-
-            <li>
-                <span class="award-title">
-                Top‑Ranked M.Sc. Entrance – Astronomy and Astrophysics
-                </span>
-                <div class="award-subtitle">
-                    Kharazmi University, Tehran, Iran
-                </div>
-            </li>
-
-        </ul>
+            <script>
+                fetch("assets/includes/sidebar-right.html")
+                    .then(res => res.text())
+                    .then(data => document.getElementById("right-sidebar-placeholder").innerHTML = data);
+            </script>
+        </aside>
 
     </div>
-
-
-    <!-- Right Column (same as other pages) -->
-    <div class="right-column">
-        <!-- keep whatever content you used on the previous page -->
-    </div>
-
-</div>
 
 </body>
 </html>
