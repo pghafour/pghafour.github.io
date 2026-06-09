@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | P. Ghafour</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("assets/includes/header.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("header-placeholder").innerHTML = data);
+    </script>
+
+    <!-- 3-COLUMN LAYOUT -->
+    <div class="main-container">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <div id="left-sidebar-placeholder"></div>
+
+            <script>
+                fetch("assets/includes/sidebar-left.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.getElementById("left-sidebar-placeholder").innerHTML = data;
+
+                        const current = window.location.pathname.split("/").pop();
+                        const links = document.querySelectorAll(".menu-item a");
+
+                        links.forEach(link => {
+                            const page = link.getAttribute("href");
+                            link.classList.remove("active-page");
+                            if (page === current) {
+                                link.classList.add("active-page");
+                            }
+                        });
+
+                        if (current === "" || current === "index.html") {
+                            document.querySelector('.menu-item a[href="index.html"]').classList.add("active-page");
+                        }
+                    });
+            </script>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h2 class="page-title">About Me</h2>
+            <hr>
+
+            <p>
+                I am <strong>Parsa Ghafour</strong>, a PhD student in Gravity and Cosmology
+                with a research focus on Computational Cosmology, large-scale structure
+                formation, cosmic web analysis, galaxy evolution, and machine learning
+                applications in astrophysics. My work combines theoretical cosmology,
+                numerical methods, and data-driven approaches to investigate the formation
+                and evolution of cosmic structures across different environments.
+            </p>
+
+            <h3>Education</h3>
+            <ul>
+                <li>
+                    <strong>PhD in Gravity and Cosmology (Computational Cosmology)</strong><br>
+                    <a href="https://en.sbu.ac.ir/" target="_blank">
+                        Shahid Beheshti University
+                    </a>,
+                    Tehran, Iran (2025–Present)
+                </li>
+
+                <li>
+                    <strong>Master of Gravity and Cosmology (Computational Cosmology)</strong><br>
+                    <a href="https://khu.ac.ir/en" target="_blank">
+                        Kharazmi University
+                    </a>,
+                    Tehran, Iran (2022–2025)
+                </li>
+
+                <li>
+                    <strong>Master of Astronomy and Astrophysics (Extragalactic Astronomy)</strong><br>
+                    <a href="https://khu.ac.ir/en" target="_blank">
+                        Kharazmi University
+                    </a>,
+                    Tehran, Iran (2023–2025)
+                </li>
+
+                <li>
+                    <strong>Bachelor of Chemical Engineering (Food Industry)</strong><br>
+                    <a href="https://srb.iau.ir/en" target="_blank">
+                        Islamic Azad University, Science and Research Branch
+                    </a>,
+                    Tehran, Iran (2018–2022)
+                </li>
+            </ul>
+
+            <h3>Research</h3>
+            <p>
+                My research activities and publication record can be found on the
+                <a href="publications.html">Publications</a> page.
+            </p>
+
+            <h3>Teaching</h3>
+            <ul>
+                <li>
+                    Teaching Assistant, <strong>Computational Physics</strong>
+                    (Dr. Saeed Tavasoli), Kharazmi University (Spring 2024)
+                </li>
+
+                <li>
+                    Teaching Assistant, <strong>Computer Programming</strong>
+                    (Dr. Khoeini), Kharazmi University (Spring 2024)
+                </li>
+            </ul>
+
+            <h3>Honors & Awards</h3>
+            <p>
+                A complete list of honors and awards is available on the
+                <a href="awards.html">Awards</a> page.
+            </p>
+
+            <h3>Experience</h3>
+            <ul>
+                <li>
+                    <strong>Research Assistant</strong><br>
+                    Kharazmi University, Tehran, Iran
+                    (January 2025 – August 2025)
+                </li>
+
+                <li>
+                    <strong>Master's Student Researcher</strong><br>
+                    Kharazmi University, Tehran, Iran
+                    (January 2023 – January 2025)
+                </li>
+            </ul>
+
+            <h3>Conferences & Seminars</h3>
+            <p>
+                Talks, invited presentations, and seminar activities are listed on the
+                <a href="talks.html">Talks & Seminars</a> page.
+            </p>
+
+            <h3>Skills</h3>
+
+            <ul>
+                <li>Computational Cosmology</li>
+                <li>Data Analysis with Python</li>
+                <li>Computational Physics</li>
+                <li>Machine Learning</li>
+                <li>Parallel Programming</li>
+                <li>Artificial Neural Networks</li>
+                <li>C++</li>
+                <li>Google Data Studio</li>
+                <li>GNU Octave</li>
+                <li>MATLAB</li>
+                <li>IBM SPSS Statistics</li>
+                <li>ICDL</li>
+                <li>Command Prompt Scripting</li>
+            </ul>
+
+            <h3>Certificates</h3>
+
+            <ul>
+                <li>Cosmological Data Analysis at a Glance — Kharazmi University (2023)</li>
+                <li>Data Science — MindLuster E-learning (2023)</li>
+                <li>Data Preprocessing — Great Learning (2023)</li>
+                <li>Introduction to Machine Learning — Great Learning (2023)</li>
+                <li>About The Large Scale Universe — Iran University of Science and Technology (2023)</li>
+                <li>Advanced Parallel Programming — Kharazmi University (2023)</li>
+                <li>Introduction to Data Science — Great Learning (2023)</li>
+                <li>Python Clean Coding — MindLuster E-learning (2023)</li>
+                <li>Quantum Computing Based on Superconducting Circuits — Kharazmi University (2024)</li>
+                <li>MATLAB Certified — Shahid Beheshti University (2023)</li>
+                <li>Google Data Studio — MindLuster E-learning (2023)</li>
+                <li>Quantum Computer Programming with Qiskit — MindLuster E-learning (2023)</li>
+            </ul>
+
+            <h3>Volunteer Experience</h3>
+
+            <ul>
+                <li>
+                    Board Member,
+                    <strong>Kharazmi University Astronomical Society</strong>
+                    (September 2023 – June 2024)
+                </li>
+            </ul>
+
+            <h3>References</h3>
+            <p>
+                Academic collaborators, mentors, and references can be found on the
+                <a href="collaborations.html">Collaborations</a> page.
+            </p>
+
+            <h3>Connect</h3>
+            <p>
+                For academic inquiries, collaborations, or professional contact,
+                please visit the <a href="contact.html">Contact</a> page.
+            </p>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <div id="right-sidebar-placeholder"></div>
+
+            <script>
+                fetch("assets/includes/sidebar-right.html")
+                    .then(res => res.text())
+                    .then(data => document.getElementById("right-sidebar-placeholder").innerHTML = data);
+            </script>
+        </aside>
+
+    </div>
+
+</body>
+</html>
